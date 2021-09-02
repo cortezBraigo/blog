@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    //evita repetir el with en el web.php eager loading
+    // protected $with = ['category', 'author'];
 
     public function category() {
         return $this->belongsTo(Category::class);
